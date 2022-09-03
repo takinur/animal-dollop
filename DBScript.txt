@@ -1,0 +1,151 @@
+﻿CREATE TABLE organizationType
+(
+	[Id] INT NOT NULL IDENTITY(1,1) PRIMARY KEY, 
+    [type] VARCHAR(50) NULL
+)
+GO
+
+INSERT INTO organizationType VALUES('Farm')
+INSERT INTO organizationType VALUES('Zoo')
+GO
+
+CREATE TABLE organization (
+    [Organization_Id] INT IDENTITY (1, 1) NOT NULL  PRIMARY KEY,
+    [Name] VARCHAR (50) NULL,
+    [Address] VARCHAR (50) NULL,
+    [type_id] INT NULL, 
+    CONSTRAINT [FK_organization_ToTable] FOREIGN KEY ([type_id]) REFERENCES [organizationType]([Id])
+    
+)
+GO
+
+INSERT INTO organization VALUES('Arif Animal Farm', 'Satkhira', 1)
+INSERT INTO organization VALUES('Safari Animal Park', 'Gazipur', 2)
+GO
+
+CREATE TABLE species
+(
+    [species_Id]  INT IDENTITY (1, 1) NOT NULL PRIMARY KEY,
+    [name] VARCHAR (50) NULL,
+    [description] TEXT NULL
+)
+GO
+
+CREATE TABLE animal
+(
+	[animal_Id] INT NOT NULL identity(1,1) PRIMARY KEY, 
+    [name] VARCHAR(50) NULL, 
+    [age] VARCHAR(50) NULL, 
+    [gender] VARCHAR(50) NULL, 
+    [height] DECIMAL NULL,
+    [weight] DECIMAL NULL,
+    [species_Id] INT NULL, 
+    [organization_Id] INT NULL, 
+    CONSTRAINT [FK_Species_Id] FOREIGN KEY (species_Id) REFERENCES species(species_Id), 
+    CONSTRAINT [FK_Org_ID] FOREIGN KEY (organization_Id) REFERENCES organization(organization_Id)
+)
+GO
+
+CREATE TABLE meal
+(
+	[Id] INT NOT NULL IDENTITY(1,1) PRIMARY KEY, 
+    [name] VARCHAR(50) NULL, 
+    [unit_in_gram] FLOAT NULL, 
+    [caloriers] FLOAT NULL
+)
+GO
+
+CREATE TABLE exercise (
+    [Id] INT IDENTITY (1, 1) NOT NULL PRIMARY KEY,
+    [name] VARCHAR (50) NULL,
+    [time] VARCHAR(30) NULL,
+    [calories_burn] FLOAT NULL,
+    [exercise_type] VARCHAR(50) NULL
+     
+)
+GO
+
+CREATE TABLE staff (
+    [staff_Id] INT IDENTITY (1, 1) NOT NULL PRIMARY KEY,
+    [name] VARCHAR (50) NULL,
+    [age] VARCHAR (50) NULL,
+    [deg] VARCHAR (50) NULL, 
+    [org_id] INT NULL, 
+    CONSTRAINT [FK_staff_ToTable] FOREIGN KEY (org_id) REFERENCES organization(Organization_Id)    
+)
+GO
+
+CREATE TABLE course
+(
+	[Id] INT NOT NULL IDENTITY(1,1) PRIMARY KEY, 
+    [start_date] DATETIME NULL, 
+    [end_date] DATETIME NULL, 
+    [animal_Id] INT NULL, 
+    [staff_id] INT NULL, 
+    [goal] VARCHAR(50) NULL, 
+    [BMI] FLOAT NULL,    
+    CONSTRAINT [FK_animalID] FOREIGN KEY (animal_Id) REFERENCES animal(animal_Id), 
+    CONSTRAINT [FK_staff] FOREIGN KEY (staff_id) REFERENCES staff(staff_Id)
+)
+GO
+
+CREATE TABLE activity
+(
+	[activity_Id] INT NOT NULL IDENTITY(1,1) PRIMARY KEY, 
+    [Name] VARCHAR(50) NULL     
+)
+GO
+
+INSERT INTO activity VALUES('Active')
+INSERT INTO activity VALUES('Moderate')
+INSERT INTO activity VALUES('Inactive')
+GO
+
+CREATE TABLE daily_log
+(
+	[log_Id] INT NOT NULL IDENTITY(1,1) PRIMARY KEY,            
+    [course_id] INT NULL,
+    [activity_id] INT NULL, 
+    [date] DATE NULL, 
+    [progress] VARCHAR(100),
+    CONSTRAINT [FK_activity] FOREIGN KEY (activity_id) REFERENCES activity(activity_id),
+    CONSTRAINT [FK_cours] FOREIGN KEY (course_id) REFERENCES course(Id)
+)
+GO
+
+CREATE TABLE daily_meal
+(
+	[Id] INT NOT NULL IDENTITY(1,1) PRIMARY KEY,  
+    [log_id] INT NULL, 
+    [meal_id] INT NULL, 
+    [meal_intake] FLOAT NULL, 
+    CONSTRAINT [FK_log] FOREIGN KEY (log_id) REFERENCES daily_log(log_Id),
+    CONSTRAINT [FK_meal] FOREIGN KEY (meal_id) REFERENCES meal(Id)
+)
+GO
+
+CREATE TABLE daily_measurement
+(
+	[Id] INT NOT NULL IDENTITY(1,1) PRIMARY KEY, 
+    [log_id] INT NULL, 
+    [waist_size] INT NULL,
+    [weight] FLOAT NULL,
+    [shift] VARCHAR(50) NULL, 
+    [date] DATE,
+    CONSTRAINT [FK_dlog] FOREIGN KEY (log_id) REFERENCES daily_log(log_Id)
+)
+GO
+
+CREATE TABLE daily_exercise
+(
+	[Id] INT NOT NULL IDENTITY(1,1) PRIMARY KEY, 
+    [log_id] INT NULL, 
+    [time] VARCHAR(50) NULL, 
+    [exercise_id] INT NULL, 
+    CONSTRAINT [FK_daylog] FOREIGN KEY (log_id) REFERENCES daily_log(log_Id),
+    CONSTRAINT [FK_excers] FOREIGN KEY (exercise_id) REFERENCES exercise(Id)
+)
+
+
+
+
