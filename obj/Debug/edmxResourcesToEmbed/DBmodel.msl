@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="weightTrackerDBModelStoreContainer" CdmEntityContainer="wTrackerDBEntities">
+    <EntitySetMapping Name="activities">
+      <EntityTypeMapping TypeName="weightTrackerDBModel.activity">
+        <MappingFragment StoreEntitySet="activity">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="activity_Id" ColumnName="activity_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="animals">
+      <EntityTypeMapping TypeName="weightTrackerDBModel.animal">
+        <MappingFragment StoreEntitySet="animal">
+          <ScalarProperty Name="organization_Id" ColumnName="organization_Id" />
+          <ScalarProperty Name="species_Id" ColumnName="species_Id" />
+          <ScalarProperty Name="weight" ColumnName="weight" />
+          <ScalarProperty Name="height" ColumnName="height" />
+          <ScalarProperty Name="gender" ColumnName="gender" />
+          <ScalarProperty Name="age" ColumnName="age" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="animal_Id" ColumnName="animal_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="courses">
+      <EntityTypeMapping TypeName="weightTrackerDBModel.course">
+        <MappingFragment StoreEntitySet="course">
+          <ScalarProperty Name="BMI" ColumnName="BMI" />
+          <ScalarProperty Name="goal" ColumnName="goal" />
+          <ScalarProperty Name="staff_id" ColumnName="staff_id" />
+          <ScalarProperty Name="animal_Id" ColumnName="animal_Id" />
+          <ScalarProperty Name="end_date" ColumnName="end_date" />
+          <ScalarProperty Name="start_date" ColumnName="start_date" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="daily_exercise">
+      <EntityTypeMapping TypeName="weightTrackerDBModel.daily_exercise">
+        <MappingFragment StoreEntitySet="daily_exercise">
+          <ScalarProperty Name="exercise_id" ColumnName="exercise_id" />
+          <ScalarProperty Name="time" ColumnName="time" />
+          <ScalarProperty Name="log_id" ColumnName="log_id" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="daily_log">
+      <EntityTypeMapping TypeName="weightTrackerDBModel.daily_log">
+        <MappingFragment StoreEntitySet="daily_log">
+          <ScalarProperty Name="progress" ColumnName="progress" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="activity_id" ColumnName="activity_id" />
+          <ScalarProperty Name="course_id" ColumnName="course_id" />
+          <ScalarProperty Name="log_Id" ColumnName="log_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="daily_meal">
+      <EntityTypeMapping TypeName="weightTrackerDBModel.daily_meal">
+        <MappingFragment StoreEntitySet="daily_meal">
+          <ScalarProperty Name="meal_intake" ColumnName="meal_intake" />
+          <ScalarProperty Name="meal_id" ColumnName="meal_id" />
+          <ScalarProperty Name="log_id" ColumnName="log_id" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="daily_measurement">
+      <EntityTypeMapping TypeName="weightTrackerDBModel.daily_measurement">
+        <MappingFragment StoreEntitySet="daily_measurement">
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="shift" ColumnName="shift" />
+          <ScalarProperty Name="weight" ColumnName="weight" />
+          <ScalarProperty Name="waist_size" ColumnName="waist_size" />
+          <ScalarProperty Name="log_id" ColumnName="log_id" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="exercises">
+      <EntityTypeMapping TypeName="weightTrackerDBModel.exercise">
+        <MappingFragment StoreEntitySet="exercise">
+          <ScalarProperty Name="exercise_type" ColumnName="exercise_type" />
+          <ScalarProperty Name="calories_burn" ColumnName="calories_burn" />
+          <ScalarProperty Name="time" ColumnName="time" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="meals">
+      <EntityTypeMapping TypeName="weightTrackerDBModel.meal">
+        <MappingFragment StoreEntitySet="meal">
+          <ScalarProperty Name="caloriers" ColumnName="caloriers" />
+          <ScalarProperty Name="unit_in_gram" ColumnName="unit_in_gram" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="organizations">
+      <EntityTypeMapping TypeName="weightTrackerDBModel.organization">
+        <MappingFragment StoreEntitySet="organization">
+          <ScalarProperty Name="type_id" ColumnName="type_id" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Organization_Id" ColumnName="Organization_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="organizationTypes">
+      <EntityTypeMapping TypeName="weightTrackerDBModel.organizationType">
+        <MappingFragment StoreEntitySet="organizationType">
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="species">
+      <EntityTypeMapping TypeName="weightTrackerDBModel.species">
+        <MappingFragment StoreEntitySet="species">
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="species_Id" ColumnName="species_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="staffs">
+      <EntityTypeMapping TypeName="weightTrackerDBModel.staff">
+        <MappingFragment StoreEntitySet="staff">
+          <ScalarProperty Name="org_id" ColumnName="org_id" />
+          <ScalarProperty Name="deg" ColumnName="deg" />
+          <ScalarProperty Name="age" ColumnName="age" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="staff_Id" ColumnName="staff_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

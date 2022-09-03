@@ -1,0 +1,60 @@
+G:\VisualStudio\animalWeightTracker_00183727\bin\Debug\weightTrackerDB.mdf
+G:\VisualStudio\animalWeightTracker_00183727\bin\Debug\weightTrackerDB_log.ldf
+G:\VisualStudio\animalWeightTracker_00183727\bin\Debug\animalWeightTracker_00183727.exe.config
+G:\VisualStudio\animalWeightTracker_00183727\bin\Debug\animalWeightTracker_00183727.exe
+G:\VisualStudio\animalWeightTracker_00183727\bin\Debug\animalWeightTracker_00183727.pdb
+G:\VisualStudio\animalWeightTracker_00183727\bin\Debug\EntityFramework.dll
+G:\VisualStudio\animalWeightTracker_00183727\bin\Debug\EntityFramework.SqlServer.dll
+G:\VisualStudio\animalWeightTracker_00183727\bin\Debug\EntityFramework.xml
+G:\VisualStudio\animalWeightTracker_00183727\bin\Debug\EntityFramework.SqlServer.xml
+G:\VisualStudio\animalWeightTracker_00183727\obj\Debug\animalWeightTracker_00183727.csprojAssemblyReference.cache
+G:\VisualStudio\animalWeightTracker_00183727\obj\Debug\animalWeightTracker_00183727.Properties.Resources.resources
+G:\VisualStudio\animalWeightTracker_00183727\obj\Debug\animalWeightTracker_00183727.csproj.GenerateResource.cache
+G:\VisualStudio\animalWeightTracker_00183727\obj\Debug\animalWeightTracker_00183727.csproj.CoreCompileInputs.cache
+G:\VisualStudio\animalWeightTracker_00183727\obj\Debug\animalWeightTracker_00183727.csproj.CopyComplete
+G:\VisualStudio\animalWeightTracker_00183727\obj\Debug\animalWeightTracker_00183727.exe
+G:\VisualStudio\animalWeightTracker_00183727\obj\Debug\animalWeightTracker_00183727.pdb
+G:\VisualStudio\animalWeightTracker_00183727\obj\Debug\animalWeightTracker_00183727.frmMain.resources
+G:\VisualStudio\animalWeightTracker_00183727\obj\Debug\animalWeightTracker_00183727.ListView.frmAnimalList.resources
+G:\VisualStudio\animalWeightTracker_00183727\obj\Debug\animalWeightTracker_00183727.Model.frmModifyAnimal.resources
+G:\VisualStudio\animalWeightTracker_00183727\obj\Debug\animalWeightTracker_00183727.ListView.frmSpecieList.resources
+G:\VisualStudio\animalWeightTracker_00183727\obj\Debug\animalWeightTracker_00183727.Model.frmSpModify.resources
+J:\ADI85_Classwork\New folder\ADI-pass-12345\animalWeightTracker_00183727\bin\Debug\animalWeightTracker_00183727.exe.config
+J:\ADI85_Classwork\New folder\ADI-pass-12345\animalWeightTracker_00183727\obj\Debug\animalWeightTracker_00183727.exe
+J:\ADI85_Classwork\New folder\ADI-pass-12345\animalWeightTracker_00183727\obj\Debug\animalWeightTracker_00183727.pdb
+J:\ADI85_Classwork\New folder\ADI-pass-12345\animalWeightTracker_00183727\bin\Debug\weightTrackerDB.mdf
+J:\ADI85_Classwork\New folder\ADI-pass-12345\animalWeightTracker_00183727\bin\Debug\weightTrackerDB_log.ldf
+J:\ADI85_Classwork\New folder\ADI-pass-12345\animalWeightTracker_00183727\bin\Debug\animalWeightTracker_00183727.exe
+J:\ADI85_Classwork\New folder\ADI-pass-12345\animalWeightTracker_00183727\bin\Debug\animalWeightTracker_00183727.pdb
+J:\ADI85_Classwork\New folder\ADI-pass-12345\animalWeightTracker_00183727\bin\Debug\EntityFramework.dll
+J:\ADI85_Classwork\New folder\ADI-pass-12345\animalWeightTracker_00183727\bin\Debug\EntityFramework.SqlServer.dll
+J:\ADI85_Classwork\New folder\ADI-pass-12345\animalWeightTracker_00183727\bin\Debug\EntityFramework.xml
+J:\ADI85_Classwork\New folder\ADI-pass-12345\animalWeightTracker_00183727\bin\Debug\EntityFramework.SqlServer.xml
+J:\ADI85_Classwork\New folder\ADI-pass-12345\animalWeightTracker_00183727\obj\Debug\animalWeightTracker_00183727.csprojResolveAssemblyReference.cache
+J:\ADI85_Classwork\New folder\ADI-pass-12345\animalWeightTracker_00183727\obj\Debug\animalWeightTracker_00183727.frmMain.resources
+J:\ADI85_Classwork\New folder\ADI-pass-12345\animalWeightTracker_00183727\obj\Debug\animalWeightTracker_00183727.frmStaff.resources
+J:\ADI85_Classwork\New folder\ADI-pass-12345\animalWeightTracker_00183727\obj\Debug\animalWeightTracker_00183727.ListView.frmAnimalList.resources
+J:\ADI85_Classwork\New folder\ADI-pass-12345\animalWeightTracker_00183727\obj\Debug\animalWeightTracker_00183727.ListView.frmSpecieList.resources
+J:\ADI85_Classwork\New folder\ADI-pass-12345\animalWeightTracker_00183727\obj\Debug\animalWeightTracker_00183727.Model.frmModifyAnimal.resources
+J:\ADI85_Classwork\New folder\ADI-pass-12345\animalWeightTracker_00183727\obj\Debug\animalWeightTracker_00183727.Model.frmSpModify.resources
+J:\ADI85_Classwork\New folder\ADI-pass-12345\animalWeightTracker_00183727\obj\Debug\animalWeightTracker_00183727.Properties.Resources.resources
+J:\ADI85_Classwork\New folder\ADI-pass-12345\animalWeightTracker_00183727\obj\Debug\animalWeightTracker_00183727.csproj.GenerateResource.Cache
+G:\VisualStudio\animalWeightTracker_00183727\obj\Debug\animalWeightTracker_00183727.ListView.frmOrgList.resources
+G:\VisualStudio\animalWeightTracker_00183727\obj\Debug\animalWeightTracker_00183727.Model.frmOrgModify.resources
+G:\VisualStudio\animalWeightTracker_00183727\obj\Debug\animalWeightTracker_00183727.frmModifyStaff.resources
+G:\VisualStudio\animalWeightTracker_00183727\obj\Debug\animalWeightTracker_00183727.ListView.frmStaffList.resources
+G:\VisualStudio\animalWeightTracker_00183727\obj\Debug\animalWeightTracker_00183727.ListView.frmCourseList.resources
+G:\VisualStudio\animalWeightTracker_00183727\obj\Debug\animalWeightTracker_00183727.Model.frmModifyCourse.resources
+G:\VisualStudio\animalWeightTracker_00183727\obj\Debug\animalWeightTracker_00183727.Model.frmModifyMeal.resources
+G:\VisualStudio\animalWeightTracker_00183727\obj\Debug\animalWeightTracker_00183727.ListView.frmMealList.resources
+G:\VisualStudio\animalWeightTracker_00183727\obj\Debug\animalWeightTracker_00183727.Model.frmModifyEx.resources
+G:\VisualStudio\animalWeightTracker_00183727\obj\Debug\animalWeightTracker_00183727.ListView.frmExList.resources
+G:\VisualStudio\animalWeightTracker_00183727\obj\Debug\animalWeightTracker_00183727.Model.frmDailyMeal.resources
+G:\VisualStudio\animalWeightTracker_00183727\obj\Debug\animalWeightTracker_00183727.Model.frmDaLog.resources
+G:\VisualStudio\animalWeightTracker_00183727\obj\Debug\animalWeightTracker_00183727.Model.frmDMeasure.resources
+G:\VisualStudio\animalWeightTracker_00183727\obj\Debug\animalWeightTracker_00183727.Model.frmDaExercise.resources
+G:\VisualStudio\animalWeightTracker_00183727\obj\Debug\animalWeightTracker_00183727.ListView.frmDaLogList.resources
+G:\VisualStudio\animalWeightTracker_00183727\obj\Debug\animalWeightTracker_00183727.ListView.frmMintakeList.resources
+G:\VisualStudio\animalWeightTracker_00183727\obj\Debug\animalWeightTracker_00183727.ListView.frmDExerciseList.resources
+G:\VisualStudio\animalWeightTracker_00183727\obj\Debug\animalWeightTracker_00183727.ListView.frmDMeasurementList.resources
+G:\VisualStudio\animalWeightTracker_00183727\obj\Debug\animalWeightTracker_00183727.frmHome.resources

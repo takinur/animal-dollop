@@ -1,0 +1,350 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="weightTrackerDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="activity">
+    <Key>
+      <PropertyRef Name="activity_Id" />
+    </Key>
+    <Property Name="activity_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="animal">
+    <Key>
+      <PropertyRef Name="animal_Id" />
+    </Key>
+    <Property Name="animal_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="50" />
+    <Property Name="age" Type="varchar" MaxLength="50" />
+    <Property Name="gender" Type="varchar" MaxLength="50" />
+    <Property Name="height" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="weight" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="species_Id" Type="int" />
+    <Property Name="organization_Id" Type="int" />
+  </EntityType>
+  <EntityType Name="course">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="start_date" Type="datetime" />
+    <Property Name="end_date" Type="datetime" />
+    <Property Name="animal_Id" Type="int" />
+    <Property Name="staff_id" Type="int" />
+    <Property Name="goal" Type="varchar" MaxLength="50" />
+    <Property Name="BMI" Type="float" />
+  </EntityType>
+  <EntityType Name="daily_exercise">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="log_id" Type="int" />
+    <Property Name="time" Type="varchar" MaxLength="50" />
+    <Property Name="exercise_id" Type="int" />
+  </EntityType>
+  <EntityType Name="daily_log">
+    <Key>
+      <PropertyRef Name="log_Id" />
+    </Key>
+    <Property Name="log_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="course_id" Type="int" />
+    <Property Name="activity_id" Type="int" />
+    <Property Name="date" Type="date" />
+    <Property Name="progress" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="daily_meal">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="log_id" Type="int" />
+    <Property Name="meal_id" Type="int" />
+    <Property Name="meal_intake" Type="float" />
+  </EntityType>
+  <EntityType Name="daily_measurement">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="log_id" Type="int" />
+    <Property Name="waist_size" Type="int" />
+    <Property Name="weight" Type="float" />
+    <Property Name="shift" Type="varchar" MaxLength="50" />
+    <Property Name="date" Type="date" />
+  </EntityType>
+  <EntityType Name="exercise">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="50" />
+    <Property Name="time" Type="varchar" MaxLength="30" />
+    <Property Name="calories_burn" Type="float" />
+    <Property Name="exercise_type" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="meal">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="50" />
+    <Property Name="unit_in_gram" Type="float" />
+    <Property Name="caloriers" Type="float" />
+  </EntityType>
+  <EntityType Name="organization">
+    <Key>
+      <PropertyRef Name="Organization_Id" />
+    </Key>
+    <Property Name="Organization_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" />
+    <Property Name="Address" Type="varchar" MaxLength="50" />
+    <Property Name="type_id" Type="int" />
+  </EntityType>
+  <EntityType Name="organizationType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="type" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="species">
+    <Key>
+      <PropertyRef Name="species_Id" />
+    </Key>
+    <Property Name="species_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="50" />
+    <Property Name="description" Type="text" />
+  </EntityType>
+  <EntityType Name="staff">
+    <Key>
+      <PropertyRef Name="staff_Id" />
+    </Key>
+    <Property Name="staff_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="50" />
+    <Property Name="age" Type="varchar" MaxLength="50" />
+    <Property Name="deg" Type="varchar" MaxLength="50" />
+    <Property Name="org_id" Type="int" />
+  </EntityType>
+  <Association Name="FK_activity">
+    <End Role="activity" Type="Self.activity" Multiplicity="0..1" />
+    <End Role="daily_log" Type="Self.daily_log" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="activity">
+        <PropertyRef Name="activity_Id" />
+      </Principal>
+      <Dependent Role="daily_log">
+        <PropertyRef Name="activity_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_animalID">
+    <End Role="animal" Type="Self.animal" Multiplicity="0..1" />
+    <End Role="course" Type="Self.course" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="animal">
+        <PropertyRef Name="animal_Id" />
+      </Principal>
+      <Dependent Role="course">
+        <PropertyRef Name="animal_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_cours">
+    <End Role="course" Type="Self.course" Multiplicity="0..1" />
+    <End Role="daily_log" Type="Self.daily_log" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="course">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="daily_log">
+        <PropertyRef Name="course_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_daylog">
+    <End Role="daily_log" Type="Self.daily_log" Multiplicity="0..1" />
+    <End Role="daily_exercise" Type="Self.daily_exercise" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="daily_log">
+        <PropertyRef Name="log_Id" />
+      </Principal>
+      <Dependent Role="daily_exercise">
+        <PropertyRef Name="log_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dlog">
+    <End Role="daily_log" Type="Self.daily_log" Multiplicity="0..1" />
+    <End Role="daily_measurement" Type="Self.daily_measurement" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="daily_log">
+        <PropertyRef Name="log_Id" />
+      </Principal>
+      <Dependent Role="daily_measurement">
+        <PropertyRef Name="log_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_excers">
+    <End Role="exercise" Type="Self.exercise" Multiplicity="0..1" />
+    <End Role="daily_exercise" Type="Self.daily_exercise" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="exercise">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="daily_exercise">
+        <PropertyRef Name="exercise_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_log">
+    <End Role="daily_log" Type="Self.daily_log" Multiplicity="0..1" />
+    <End Role="daily_meal" Type="Self.daily_meal" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="daily_log">
+        <PropertyRef Name="log_Id" />
+      </Principal>
+      <Dependent Role="daily_meal">
+        <PropertyRef Name="log_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_meal">
+    <End Role="meal" Type="Self.meal" Multiplicity="0..1" />
+    <End Role="daily_meal" Type="Self.daily_meal" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="meal">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="daily_meal">
+        <PropertyRef Name="meal_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Org_ID">
+    <End Role="organization" Type="Self.organization" Multiplicity="0..1" />
+    <End Role="animal" Type="Self.animal" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="organization">
+        <PropertyRef Name="Organization_Id" />
+      </Principal>
+      <Dependent Role="animal">
+        <PropertyRef Name="organization_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_organization_ToTable">
+    <End Role="organizationType" Type="Self.organizationType" Multiplicity="0..1" />
+    <End Role="organization" Type="Self.organization" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="organizationType">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="organization">
+        <PropertyRef Name="type_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Species_Id">
+    <End Role="species" Type="Self.species" Multiplicity="0..1" />
+    <End Role="animal" Type="Self.animal" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="species">
+        <PropertyRef Name="species_Id" />
+      </Principal>
+      <Dependent Role="animal">
+        <PropertyRef Name="species_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_staff">
+    <End Role="staff" Type="Self.staff" Multiplicity="0..1" />
+    <End Role="course" Type="Self.course" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="staff">
+        <PropertyRef Name="staff_Id" />
+      </Principal>
+      <Dependent Role="course">
+        <PropertyRef Name="staff_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_staff_ToTable">
+    <End Role="organization" Type="Self.organization" Multiplicity="0..1" />
+    <End Role="staff" Type="Self.staff" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="organization">
+        <PropertyRef Name="Organization_Id" />
+      </Principal>
+      <Dependent Role="staff">
+        <PropertyRef Name="org_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="weightTrackerDBModelStoreContainer">
+    <EntitySet Name="activity" EntityType="Self.activity" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="animal" EntityType="Self.animal" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="course" EntityType="Self.course" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="daily_exercise" EntityType="Self.daily_exercise" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="daily_log" EntityType="Self.daily_log" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="daily_meal" EntityType="Self.daily_meal" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="daily_measurement" EntityType="Self.daily_measurement" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="exercise" EntityType="Self.exercise" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="meal" EntityType="Self.meal" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="organization" EntityType="Self.organization" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="organizationType" EntityType="Self.organizationType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="species" EntityType="Self.species" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="staff" EntityType="Self.staff" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_activity" Association="Self.FK_activity">
+      <End Role="activity" EntitySet="activity" />
+      <End Role="daily_log" EntitySet="daily_log" />
+    </AssociationSet>
+    <AssociationSet Name="FK_animalID" Association="Self.FK_animalID">
+      <End Role="animal" EntitySet="animal" />
+      <End Role="course" EntitySet="course" />
+    </AssociationSet>
+    <AssociationSet Name="FK_cours" Association="Self.FK_cours">
+      <End Role="course" EntitySet="course" />
+      <End Role="daily_log" EntitySet="daily_log" />
+    </AssociationSet>
+    <AssociationSet Name="FK_daylog" Association="Self.FK_daylog">
+      <End Role="daily_log" EntitySet="daily_log" />
+      <End Role="daily_exercise" EntitySet="daily_exercise" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dlog" Association="Self.FK_dlog">
+      <End Role="daily_log" EntitySet="daily_log" />
+      <End Role="daily_measurement" EntitySet="daily_measurement" />
+    </AssociationSet>
+    <AssociationSet Name="FK_excers" Association="Self.FK_excers">
+      <End Role="exercise" EntitySet="exercise" />
+      <End Role="daily_exercise" EntitySet="daily_exercise" />
+    </AssociationSet>
+    <AssociationSet Name="FK_log" Association="Self.FK_log">
+      <End Role="daily_log" EntitySet="daily_log" />
+      <End Role="daily_meal" EntitySet="daily_meal" />
+    </AssociationSet>
+    <AssociationSet Name="FK_meal" Association="Self.FK_meal">
+      <End Role="meal" EntitySet="meal" />
+      <End Role="daily_meal" EntitySet="daily_meal" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Org_ID" Association="Self.FK_Org_ID">
+      <End Role="organization" EntitySet="organization" />
+      <End Role="animal" EntitySet="animal" />
+    </AssociationSet>
+    <AssociationSet Name="FK_organization_ToTable" Association="Self.FK_organization_ToTable">
+      <End Role="organizationType" EntitySet="organizationType" />
+      <End Role="organization" EntitySet="organization" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Species_Id" Association="Self.FK_Species_Id">
+      <End Role="species" EntitySet="species" />
+      <End Role="animal" EntitySet="animal" />
+    </AssociationSet>
+    <AssociationSet Name="FK_staff" Association="Self.FK_staff">
+      <End Role="staff" EntitySet="staff" />
+      <End Role="course" EntitySet="course" />
+    </AssociationSet>
+    <AssociationSet Name="FK_staff_ToTable" Association="Self.FK_staff_ToTable">
+      <End Role="organization" EntitySet="organization" />
+      <End Role="staff" EntitySet="staff" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
